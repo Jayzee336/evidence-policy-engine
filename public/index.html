@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>PolicyCheck | Dietary Compliance Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">✓</div>
+        <div>
+          <p class="brand-name">PolicyCheck</p>
+          <p class="brand-caption">Evidence-Based Policy Rule Engine</p>
+        </div>
+      </div>
+
+      <div class="system-status">
+        <span class="status-dot"></span>
+        Rule engine ready
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">DIETARY POLICY VALIDATION</p>
+        <h1>Validate your meal plan.</h1>
+        <p class="welcome-text">
+          Evaluate daily sodium intake against a documented dietary guideline.
+        </p>
+      </div>
+
+      <div class="welcome-mark" aria-hidden="true">
+        <span>✓</span>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="form-card">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">YOUR DAILY INTAKE</p>
+            <h2>Meal plan</h2>
+          </div>
+          <span class="meal-count">Custom plan</span>
+        </div>
+
+        <p class="hint">
+          Add each meal and enter its sodium content in milligrams.
+        </p>
+
+        <form id="mealForm">
+          <div id="mealList"></div>
+
+          <button type="button" id="addMeal" class="secondary">
+            <span aria-hidden="true">＋</span> Add another meal
+          </button>
+
+          <button type="submit" class="primary">
+            Validate meal plan
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div class="form-note">
+          <span aria-hidden="true">ⓘ</span>
+          Use the sodium values from your food labels or meal data.
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <section class="policy-card">
+          <div class="card-heading">
+            <span class="card-icon" aria-hidden="true">◎</span>
+            <span class="section-label">ACTIVE POLICY</span>
+          </div>
+
+          <h2>WHO adult sodium guideline</h2>
+          <p class="policy-description">
+            Daily sodium intake should remain below the configured limit.
+          </p>
+
+          <div class="threshold">
+            <span class="threshold-number">2,000</span>
+            <span class="threshold-unit">mg / day</span>
+          </div>
+
+          <div class="threshold-track">
+            <div class="threshold-fill"></div>
+          </div>
+
+          <p class="threshold-caption">Maximum threshold used by this app</p>
+
+          <a
+            href="https://www.who.int/publications/i/item/9789241504836"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="source-link"
+          >
+            View WHO policy source <span aria-hidden="true">↗</span>
+          </a>
+        </section>
+
+        <section class="result-card">
+          <div class="card-heading">
+            <span class="card-icon result-icon" aria-hidden="true">✓</span>
+            <span class="section-label">VALIDATION REPORT</span>
+          </div>
+
+          <div id="result" class="result" hidden aria-live="polite"></div>
+
+          <div id="resultPlaceholder" class="result-placeholder">
+            <div class="placeholder-symbol" aria-hidden="true">↗</div>
+            <h3>Your result will appear here</h3>
+            <p>
+              Submit your meal plan to calculate the total and check compliance.
+            </p>
+          </div>
+        </section>
+
+        <section class="info-card">
+          <p class="section-label">HOW IT WORKS</p>
+          <div class="process-step">
+            <span>01</span>
+            <p>Enter your meals and sodium values.</p>
+          </div>
+          <div class="process-step">
+            <span>02</span>
+            <p>The backend calculates your daily total.</p>
+          </div>
+          <div class="process-step">
+            <span>03</span>
+            <p>The policy rule determines PASS or FLAG.</p>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <footer>
+      <span>PolicyCheck</span>
+      <span>Educational prototype · Not a substitute for clinical assessment</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
